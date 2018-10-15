@@ -16,7 +16,7 @@ export class UserService extends BaseApiService {
   constructor(private http: HttpClient) {
     super();
   }
-
+  
   create(user: User) {
     return this.http.post<User>(UserService.USER_API, user, BaseApiService.defaultOptions)
       .pipe(

@@ -1,11 +1,17 @@
 <div class="nav">
-  <div class="nav-link">
-    <fa-icon [icon]="faCoffee"></fa-icon>Resumen
+  <div class="nav-link" style="text-align: center">
+   <button routerLink="dashboard">  <i class="small material-icons">face</i></button> 
   </div>
-  <div class="nav-link">Alertas</div>
-  <div class="nav-link">Tareas</div>
-  <div class="nav-link">Awards</div>
-  <div routerLinkActive="active">
-    <button class="btn btn-link" (click)="onClickLogout()">Logout</button>
+  <div class="nav-link" style="text-align: center">
+    <button>  <i class="small material-icons">notifications</i></button> 
+   </div>
+   <div class="nav-link" style="text-align: center">
+    <button>  <i class="small material-icons">content_paste</i></button> 
+   </div>
+   <div class="nav-link" style="text-align: center">
+    <button>  <i class="small material-icons">card_giftcard</i></button> 
+   </div>
+  <div routerLinkActive="active" style="text-align: center" class="nav-link">
+    <button  (click)="onClickLogout()"><i class="small material-icons">highlight_off</i></button>
   </div>
 </div>

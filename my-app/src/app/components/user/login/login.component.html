@@ -1,7 +1,7 @@
 <div class="row">
   <form (ngSubmit)="onSubmitLogin(loginForm)" #loginForm="ngForm">
     <div class="row">
-      
+
       <div class="input-field col s12">
         <input autocomplete="off" id="email" type="email" class="validate" [ngClass]="{ 'is-invalid': apiError || email.errors && email.touched }"
           name="email" [(ngModel)]="user.email" #email="ngModel" required email>
@@ -29,9 +29,9 @@
       <div class="invalid-feedback" *ngIf="apiError">
         {{ apiError.message }}
       </div>
+        <button class="waves-effect waves-light btn">Log in</button>
 
-      <button class="waves-effect waves-light btn">Log in</button>
 
     </div>
-    </form>
+  </form>
 </div>

@@ -1,5 +1,5 @@
 <div class="row">
-  <form (ngSubmit)="onSubmitSignUp(signupForm)" #signupForm="ngForm">
+  <form (ngSubmit)="onSubmitSignUp(signupForm)"  #signupForm="ngForm" >
     <div class="row">
 
         <div class="input-field col s12">
@@ -28,7 +28,7 @@
 
       <div class="input-field col s12">
         <input autocomplete="off" id="password" type="password" class="validate" [ngClass]="{ 'is-invalid': apiError || password.errors && password.touched }"
-          name="password" [(ngModel)]="user.password" #password="ngModel" required>
+          name="password" [(ngModel)]="user.password" #password="ngModel"  required>
         <label for="email">Password</label>
       </div>
 

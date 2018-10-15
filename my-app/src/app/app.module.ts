@@ -16,6 +16,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { KidregisterComponent } from './components/user/kidregister/kidregister.component';
+import { KiddashboardComponent } from './components/kiddashboard/kiddashboard.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { KidregisterComponent } from './components/user/kidregister/kidregister.
     HomeComponent,
     DashboardComponent,
     NavbarComponent,
-    KidregisterComponent
+    KidregisterComponent,
+    KiddashboardComponent
   ],
   imports: [
     BrowserModule,
