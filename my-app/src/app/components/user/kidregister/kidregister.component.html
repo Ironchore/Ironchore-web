@@ -2,11 +2,20 @@
   <form (ngSubmit)="onSubmitSignUp(signupForm)" #signupForm="ngForm">
     <div class="row">
 
-
+        <div class="input-field col s12">
+            <input autocomplete="off" id="name" type="text" class="validate" [ngClass]="{ 'is-invalid': apiError || name.errors && name.touched }"
+              name="name" [(ngModel)]="user.name" #name="ngModel" name>
+            <label for="name">Name</label>
+        </div>
+  
+        <div class="invalid-feedback" *ngIf="name.errors && name.touched && name.errors.required">
+          Please chose a name.
+        </div>
+      
       <div class="input-field col s12">
-          <input autocomplete="off" id="email" type="email" class="validate" [ngClass]="{ 'is-invalid': apiError || email.errors && email.touched }"
-            name="email" [(ngModel)]="user.email" #email="ngModel" required email>
-          <label for="email">Email</label>
+        <input autocomplete="off" id="email" type="email" class="validate" [ngClass]="{ 'is-invalid': apiError || email.errors && email.touched }"
+          name="email" [(ngModel)]="user.email" #email="ngModel" required email>
+        <label for="email">Email</label>
       </div>
 
       <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.required">
@@ -31,8 +40,8 @@
         {{ apiError.message }}
       </div>
 
-      <button type="submit" class="waves-effect waves-light btn" [ngClass]="{ 'disabled' : !signupForm.valid }">Register</button>
+      <button type="submit" class="waves-effect waves-light btn" [ngClass]="{ 'disabled' : !signupForm.valid }">Register kid</button>
 
     </div>
-  </form>
+    </form>
 </div>

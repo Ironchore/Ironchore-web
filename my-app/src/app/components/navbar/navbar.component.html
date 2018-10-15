@@ -1,7 +1,11 @@
 <div class="nav">
-  <div class="nav-link"><fa-icon [icon]="faCoffee"></fa-icon>Resumen</div>
+  <div class="nav-link">
+    <fa-icon [icon]="faCoffee"></fa-icon>Resumen
+  </div>
   <div class="nav-link">Alertas</div>
   <div class="nav-link">Tareas</div>
   <div class="nav-link">Awards</div>
-  <div class="nav-link">Menu</div>
+  <div routerLinkActive="active">
+    <button class="btn btn-link" (click)="onClickLogout()">Logout</button>
+  </div>
 </div>

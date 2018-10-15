@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: './kidregister.component.html',
+  styleUrls: ['./kidregister.component.css']
 })
-export class RegisterComponent {
+export class KidregisterComponent {
 
   user: User = new User();
   ApiError: ApiError;
@@ -23,7 +23,7 @@ export class RegisterComponent {
       this.userService.create(this.user)
         .subscribe(()=> {
           signupForm.reset();
-          this.router.navigate(['/login']);
+          this.router.navigate(['/dashboard']);
         }, (error: ApiError) => this.ApiError = error
       );
     }

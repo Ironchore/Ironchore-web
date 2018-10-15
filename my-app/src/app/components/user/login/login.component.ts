@@ -26,7 +26,7 @@ export class LoginComponent {
         .subscribe(
           () => {
             loginForm.reset();
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/kidregister']);
           },
           (error: ApiError) => this.apiError = error
         );
