@@ -17,6 +17,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { KidregisterComponent } from './components/user/kidregister/kidregister.component';
 import { KiddashboardComponent } from './components/kiddashboard/kiddashboard.component';
+import { KidItemComponent } from './components/dashboard/kid-item/kid-item.component';
+import { KidListComponent } from './components/dashboard/kid-list/kid-list.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { KiddashboardComponent } from './components/kiddashboard/kiddashboard.co
     DashboardComponent,
     NavbarComponent,
     KidregisterComponent,
-    KiddashboardComponent
+    KiddashboardComponent,
+    KidItemComponent,
+    KidListComponent
   ],
   imports: [
     BrowserModule,
