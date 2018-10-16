@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/user/register/register.component
 import { LoginComponent } from './components/user/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component'
+import { ChoresComponent } from './components/chores/chores.component';
 
 export const appRoutes: Routes = [
   { path: '' , redirectTo: '/login', pathMatch: 'full' },
@@ -13,7 +14,7 @@ export const appRoutes: Routes = [
   { path: 'login', component: HomeComponent, children: [{ path:'', component: LoginComponent }]},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'kidregister', component: KidregisterComponent },
-  { path: 'kiddashboard', component: KiddashboardComponent }
-
+  { path: 'kiddashboard', component: KiddashboardComponent },
+  { path: 'chores', component: ChoresComponent }
   // { path: '**', component: NotFound }
 ]

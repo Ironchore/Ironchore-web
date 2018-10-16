@@ -19,6 +19,11 @@ import { KidregisterComponent } from './components/user/kidregister/kidregister.
 import { KiddashboardComponent } from './components/kiddashboard/kiddashboard.component';
 import { KidItemComponent } from './components/dashboard/kid-item/kid-item.component';
 import { KidListComponent } from './components/dashboard/kid-list/kid-list.component';
+import { ChoreCreateComponent } from './components/chores/chore-create/chore-create.component';
+import { ChoreItemComponent } from './components/chores/chore-item/chore-item.component';
+import { ChoreListComponent } from './components/chores/chore-list/chore-list.component';
+import { HomeworkListComponent } from './components/kiddashboard/homework-list/homework-list.component';
+import { HomeworkItemComponent } from './components/kiddashboard/homework-item/homework-item.component';
 
 
 @NgModule({
@@ -34,7 +39,12 @@ import { KidListComponent } from './components/dashboard/kid-list/kid-list.compo
     KidregisterComponent,
     KiddashboardComponent,
     KidItemComponent,
-    KidListComponent
+    KidListComponent,
+    ChoreCreateComponent,
+    ChoreItemComponent,
+    ChoreListComponent,
+    HomeworkListComponent,
+    HomeworkItemComponent
   ],
   imports: [
     BrowserModule,

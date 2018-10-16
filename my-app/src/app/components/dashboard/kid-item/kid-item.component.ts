@@ -12,7 +12,7 @@ import { User } from 'src/app/shared/models/user.model';
 export class KidItemComponent implements OnInit {
   @Input() user: User = new User();
 
-  constructor(private UserService: UserService, private router: Router) { }
+  constructor(private UserService: UserService, private Router: Router) { }
 
   ngOnInit() {
   }
