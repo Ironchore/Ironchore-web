@@ -1,3 +1,4 @@
+import { AwardsComponent } from './components/awards/awards.component';
 import { KiddashboardComponent } from './components/kiddashboard/kiddashboard.component';
 import { KidregisterComponent } from './components/user/kidregister/kidregister.component';
 import { Routes } from '@angular/router';
@@ -15,6 +16,7 @@ export const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'kidregister', component: KidregisterComponent },
   { path: 'kiddashboard', component: KiddashboardComponent },
-  { path: 'chores', component: ChoresComponent }
+  { path: 'chores', component: ChoresComponent },
+  { path: 'awards', component: AwardsComponent }
   // { path: '**', component: NotFound }
 ]

@@ -24,6 +24,11 @@ import { ChoreItemComponent } from './components/chores/chore-item/chore-item.co
 import { ChoreListComponent } from './components/chores/chore-list/chore-list.component';
 import { HomeworkListComponent } from './components/kiddashboard/homework-list/homework-list.component';
 import { HomeworkItemComponent } from './components/kiddashboard/homework-item/homework-item.component';
+import { AwardCreateComponent } from './components/awards/award-create/award-create.component';
+import { AwardItemComponent } from './components/awards/award-item/award-item.component';
+import { AwardListComponent } from './components/awards/award-list/award-list.component';
+import { PrizeItemComponent } from './components/kiddashboard/prize-item/prize-item.component';
+import { PrizeListComponent } from './components/kiddashboard/prize-list/prize-list.component';
 
 
 @NgModule({
@@ -44,7 +49,12 @@ import { HomeworkItemComponent } from './components/kiddashboard/homework-item/h
     ChoreItemComponent,
     ChoreListComponent,
     HomeworkListComponent,
-    HomeworkItemComponent
+    HomeworkItemComponent,
+    AwardCreateComponent,
+    AwardItemComponent,
+    AwardListComponent,
+    PrizeItemComponent,
+    PrizeListComponent
   ],
   imports: [
     BrowserModule,
