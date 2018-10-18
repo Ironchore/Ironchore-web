@@ -29,6 +29,7 @@ import { AwardItemComponent } from './components/awards/award-item/award-item.co
 import { AwardListComponent } from './components/awards/award-list/award-list.component';
 import { PrizeItemComponent } from './components/kiddashboard/prize-item/prize-item.component';
 import { PrizeListComponent } from './components/kiddashboard/prize-list/prize-list.component';
+import { NavbarkidComponent } from './components/navbarkid/navbarkid.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { PrizeListComponent } from './components/kiddashboard/prize-list/prize-l
     AwardItemComponent,
     AwardListComponent,
     PrizeItemComponent,
-    PrizeListComponent
+    PrizeListComponent,
+    NavbarkidComponent
   ],
   imports: [
     BrowserModule,

@@ -13,9 +13,13 @@ export class HomeworkItemComponent implements OnInit {
 
   @Input() homework: Homework = new Homework();
 
-  constructor(private HomeworkService: HomeworkService, private Router: Router) { }
+  constructor(
+    private HomeworkService: HomeworkService, 
+    private Router: Router
+  ) { }
 
   ngOnInit() {
+    console.log(this.homework);
   }
 }
 

@@ -7,6 +7,8 @@ import { LoginComponent } from './components/user/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { ChoresComponent } from './components/chores/chores.component';
+import { HomeworkListComponent } from './components/kiddashboard/homework-list/homework-list.component';
+import { PrizeListComponent } from './components/kiddashboard/prize-list/prize-list.component';
 
 export const appRoutes: Routes = [
   { path: '' , redirectTo: '/login', pathMatch: 'full' },
@@ -17,6 +19,8 @@ export const appRoutes: Routes = [
   { path: 'kidregister', component: KidregisterComponent },
   { path: 'kiddashboard', component: KiddashboardComponent },
   { path: 'chores', component: ChoresComponent },
-  { path: 'awards', component: AwardsComponent }
+  { path: 'awards', component: AwardsComponent },
+  { path: 'homeworks', component: HomeworkListComponent },
+  { path: 'prizes', component: PrizeListComponent }
   // { path: '**', component: NotFound }
 ]

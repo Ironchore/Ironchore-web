@@ -2,7 +2,9 @@
 <div class="card">
   <img class="card-img-top" [src]="user.avatar" alt="Card image cap">
   <div class="card-body">
+      <h5 class="card-title">{{ user.name }}</h5>
     <h5 class="card-title">{{ user.email }}</h5>
+    <h5 class="card-title">{{ user.points }}</h5>
     <h5 class="card-title">{{ user.tutor }}</h5>
     <button class="btn btn-danger btn-block" (click)="onClickDeletePhone()"><i class="fa fa-times"></i> Delete</button>
   </div>

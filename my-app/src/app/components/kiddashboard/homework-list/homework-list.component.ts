@@ -16,7 +16,6 @@ export class HomeworkListComponent implements OnInit {
   ngOnInit() {
     this.homeworkService.list()
     .subscribe(
-      (homeworks: Homework[]) => this.homeworks = homeworks
-    );
+      (homeworks: Homework[]) => this.homeworks = homeworks);
   }
 }
