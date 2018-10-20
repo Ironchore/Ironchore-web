@@ -11,20 +11,21 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { ChoresComponent } from './components/chores/chores.component';
 import { HomeworkListComponent } from './components/kiddashboard/homework-list/homework-list.component';
 import { PrizeListComponent } from './components/kiddashboard/prize-list/prize-list.component';
+import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 
 export const appRoutes: Routes = [
   { path: '' , redirectTo: '/login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: HomeComponent, children: [{ path:'', component: RegisterComponent }]},
   { path: 'login', component: HomeComponent, children: [{ path:'', component: LoginComponent }]},
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'kidregister', component: KidregisterComponent },
-  { path: 'kiddashboard', component: KiddashboardComponent },
-  { path: 'chores', component: ChoresComponent },
-  { path: 'chorescreate', component: ChoreCreateComponent },
-  { path: 'awards', component: AwardsComponent },
-  { path: 'awardscreate', component: AwardCreateComponent },
-  { path: 'homeworks', component: HomeworkListComponent },
-  { path: 'prizes', component: PrizeListComponent }
+  { path: 'dashboard', canActivate: [IsAuthenticatedGuard], component: DashboardComponent },
+  { path: 'kidregister', canActivate: [IsAuthenticatedGuard], component: KidregisterComponent },
+  { path: 'kiddashboard',canActivate: [IsAuthenticatedGuard], component: KiddashboardComponent },
+  { path: 'chores', canActivate: [IsAuthenticatedGuard], component: ChoresComponent },
+  { path: 'chorescreate', canActivate: [IsAuthenticatedGuard], component: ChoreCreateComponent },
+  { path: 'awards', canActivate: [IsAuthenticatedGuard], component: AwardsComponent },
+  { path: 'awardscreate', canActivate: [IsAuthenticatedGuard], component: AwardCreateComponent },
+  { path: 'homeworks', canActivate: [IsAuthenticatedGuard], component: HomeworkListComponent },
+  { path: 'prizes', canActivate: [IsAuthenticatedGuard], component: PrizeListComponent }
   // { path: '**', component: NotFound }
 ]
