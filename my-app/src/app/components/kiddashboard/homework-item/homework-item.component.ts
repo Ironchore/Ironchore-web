@@ -25,7 +25,7 @@ export class HomeworkItemComponent implements OnInit {
   doneTask(): void {
     this.homeworkService.complete(this.homework.id)
       .subscribe(() => {});
-    this.router.navigate(['/homework']);
+    this.router.navigate(['/kiddashboard']);
   }
   
 }
