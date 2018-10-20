@@ -1,11 +1,14 @@
 
-<div class="card">
-  <img class="card-img-top" [src]="user.avatar" alt="Card image cap">
-  <div class="card-body">
-      <h5 class="card-title">{{ user.name }}</h5>
-    <h5 class="card-title">{{ user.email }}</h5>
-    <h5 class="card-title">{{ user.points }}</h5>
-    <h5 class="card-title">{{ user.tutor }}</h5>
-    <button class="btn btn-danger btn-block" (click)="onClickDeletePhone()"><i class="fa fa-times"></i> Delete</button>
+<div class="col s12 m7">
+    <div class="card horizontal">
+      <div class="card-image">
+          <img class="card-img-top" [src]="user.avatar" alt="Card image cap">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+            <p class="card-title">{{ user.email }}</p>
+            <p class="card-title">Points: {{ user.points }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>

@@ -12,9 +12,15 @@ export class ChoreItemComponent implements OnInit {
 
   @Input() chore: Chore = new Chore();
 
-  constructor(private ChoreService: ChoreService, private Router: Router) { }
+  constructor(private choreService: ChoreService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onDeleteChore(): void {
+    this.choreService.delete(this.chore.id)
+      .subscribe(() => {});
+    this.router.navigate(['/chores']);
   }
 
 }

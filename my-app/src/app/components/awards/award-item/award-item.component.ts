@@ -12,8 +12,15 @@ export class AwardItemComponent implements OnInit {
 
   @Input() award: Award = new Award();
 
-  constructor(private AwardService: AwardService, private Router: Router) { }
+  constructor(private awardService: AwardService, private router: Router) { }
 
   ngOnInit() {
   }
+
+  onDeleteAward(): void {
+    this.awardService.delete(this.award.id)
+      .subscribe(() => {});
+    this.router.navigate(['/awards']);
+  }
+
 }

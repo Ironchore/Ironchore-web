@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ApiError } from './../../../shared/models/api-error.model';
 import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -11,22 +12,23 @@ import { ChoreService } from 'src/app/shared/services/chore.service';
   templateUrl: './chore-create.component.html',
   styleUrls: ['./chore-create.component.css']
 })
-export class ChoreCreateComponent implements OnInit {
+export class ChoreCreateComponent  {
 
   chore: Chore = new Chore();
   ApiError: ApiError;
 
-  constructor(private choreService: ChoreService) { }
+  constructor(private choreService: ChoreService, private router: Router) { }
 
-  ngOnInit() {
-  }
 
   onSubmitCreate(choreForm: FormGroup): void {
+    if(choreForm.valid) {
     this.choreService.create(this.chore)
       .subscribe(() => {
         choreForm.reset();
+        this.router.navigate(['/chores']);
       }, (error: ApiError) => this.ApiError = error
       );
+    }
   }
 
 }

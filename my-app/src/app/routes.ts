@@ -1,3 +1,5 @@
+import { AwardCreateComponent } from './components/awards/award-create/award-create.component';
+import { ChoreCreateComponent } from './components/chores/chore-create/chore-create.component';
 import { AwardsComponent } from './components/awards/awards.component';
 import { KiddashboardComponent } from './components/kiddashboard/kiddashboard.component';
 import { KidregisterComponent } from './components/user/kidregister/kidregister.component';
@@ -19,7 +21,9 @@ export const appRoutes: Routes = [
   { path: 'kidregister', component: KidregisterComponent },
   { path: 'kiddashboard', component: KiddashboardComponent },
   { path: 'chores', component: ChoresComponent },
+  { path: 'chorescreate', component: ChoreCreateComponent },
   { path: 'awards', component: AwardsComponent },
+  { path: 'awardscreate', component: AwardCreateComponent },
   { path: 'homeworks', component: HomeworkListComponent },
   { path: 'prizes', component: PrizeListComponent }
   // { path: '**', component: NotFound }

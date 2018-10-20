@@ -26,14 +26,21 @@ export class PrizeService extends BaseApiService {
         map((prizes: Array<Prize>) => {
           prizes = prizes.map((prize)=>  Object.assign(new Prize(), prize));
           this.prizes = prizes;
-          this.notifyUsersChanges();
+          this.notifyPrizeChanges();
           return prizes;
         }),
         catchError(this.handleError)
       );
   }
 
-  private notifyUsersChanges(): void {
+  complete(id: String): Observable<Prize | ApiError> {
+    return this.http.get<Prize>(`${PrizeService.PRIZE_API}/${id}/wonPrize`, BaseApiService.defaultOptions)
+    .pipe(
+      map((prize: Prize) => Object.assign(new Prize(), prize)),
+      catchError(this.handleError));
+  }
+
+  private notifyPrizeChanges(): void {
     this.prizesSubject.next(this.prizes);
   }
 }

@@ -12,9 +12,14 @@ export class PrizeItemComponent implements OnInit {
 
   @Input() prize: Prize = new Prize();
 
-  constructor(private PrizeService: PrizeService, private Router: Router) { }
+  constructor(private prizeService: PrizeService, private router: Router) { }
 
   ngOnInit() {
   }
-
+  
+  wonPrize(): void {
+    this.prizeService.complete(this.prize.id)
+      .subscribe(() => {});
+    this.router.navigate(['/kiddashboard']);
+  }
 }

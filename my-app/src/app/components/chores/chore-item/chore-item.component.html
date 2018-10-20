@@ -1,8 +1,15 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">{{ chore.title }}</h5>
-    <p class="card-title">{{ chore.description }}</p>
-    <p class="card-title">{{ chore.points }}</p>
-    <button class="btn btn-danger btn-block" (click)="onClickDeletePhone()"><i class="fa fa-times"></i> Delete</button>
+
+<div class="row">
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ chore.title }}</span>
+          <p>{{ chore.description }}</p>
+          <p class="card-title">Points: {{ chore.points }}</p>
+        </div>
+        <div class="card-action">
+            <button class="btn btn-danger btn-block" (click)="onDeleteChore()"><i class="fa fa-times"></i> Delete</button>
+        </div>
+      </div>
+    </div>
   </div>
-</div>

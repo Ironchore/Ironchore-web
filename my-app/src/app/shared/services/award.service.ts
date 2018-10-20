@@ -27,7 +27,7 @@ export class AwardService extends BaseApiService {
         map((awards: Array<Award>) => {
           awards = awards.map((award)=>  Object.assign(new Award(), award));
           this.awards = awards;
-          this.notifyUsersChanges();
+          this.notifyAwardsChanges();
           return awards;
         }),
         catchError(this.handleError)
@@ -42,7 +42,19 @@ export class AwardService extends BaseApiService {
       );
   }
 
-  private notifyUsersChanges(): void {
+  delete(id: string): Observable<void | ApiError> {
+    return this.http.delete<Award>(`${AwardService.AWARD_API}/${id}`, BaseApiService.defaultOptions)
+      .pipe(
+        map(() => {
+          this.awards = this.awards.filter(a => a.id !== id);
+          this.notifyAwardsChanges();
+          return;
+        }),
+        catchError(this.handleError)
+      );
+  }
+
+  private notifyAwardsChanges(): void {
     this.awardsSubject.next(this.awards);
   }
 

@@ -1,0 +1,9 @@
+.navbar {
+  text-align: center;
+  color:white;
+  padding: 20px 0;
+}
+
+div.navbar {
+  background-color: orange;
+}

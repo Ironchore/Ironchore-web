@@ -30,7 +30,7 @@ export class ChoreService extends BaseApiService {
         map((chores: Array<Chore>) => {
           chores = chores.map((chore)=>  Object.assign(new Chore(), chore));
           this.chores = chores;
-          this.notifyUsersChanges();
+          this.notifyChoresChanges();
           return chores;
         }),
         catchError(this.handleError)
@@ -45,8 +45,20 @@ export class ChoreService extends BaseApiService {
       );
   }
 
+  delete(id: string): Observable<void | ApiError> {
+    return this.http.delete<Chore>(`${ChoreService.CHORE_API}/${id}`, BaseApiService.defaultOptions)
+      .pipe(
+        map(() => {
+          this.chores = this.chores.filter(c => c.id !== id);
+          this.notifyChoresChanges();
+          return;
+        }),
+        catchError(this.handleError)
+      );
+  }
 
-  private notifyUsersChanges(): void {
+
+  private notifyChoresChanges(): void {
     this.choresSubject.next(this.chores);
   }
 }

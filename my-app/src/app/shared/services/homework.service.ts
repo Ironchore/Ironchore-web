@@ -26,14 +26,23 @@ export class HomeworkService extends BaseApiService{
         map((homeworks: Array<Homework>) => {
           homeworks = homeworks.map((homework)=>  Object.assign(new Homework(), homework));
           this.homeworks = homeworks;
-          this.notifyUsersChanges();
+          this.notifyHomeworkChanges();
           return homeworks;
         }),
         catchError(this.handleError)
       );
   }
 
-  private notifyUsersChanges(): void {
+  complete(id: String): Observable<Homework | ApiError> {
+    return this.http.get<Homework>(`${HomeworkService.HOMEWORK_API}/${id}/completeTask`, BaseApiService.defaultOptions)
+    .pipe(
+      map((homework: Homework) => Object.assign(new Homework(), homework)),
+      catchError(this.handleError));
+  }
+
+
+
+  private notifyHomeworkChanges(): void {
     this.homeworksSubject.next(this.homeworks);
   }
 }

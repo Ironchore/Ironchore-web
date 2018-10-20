@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Award } from '../../../shared/models/award.model';
 import { AwardService } from 'src/app/shared/services/award.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-award-create',
@@ -14,7 +15,7 @@ export class AwardCreateComponent implements OnInit {
   award: Award = new Award();
   ApiError: ApiError;
 
-  constructor(private awardService: AwardService) { }
+  constructor(private awardService: AwardService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -23,6 +24,7 @@ export class AwardCreateComponent implements OnInit {
     this.awardService.create(this.award)
       .subscribe(() => {
         awardForm.reset();
+        this.router.navigate(['/awards']);
       }, (error: ApiError) => this.ApiError = error
       );
   }
